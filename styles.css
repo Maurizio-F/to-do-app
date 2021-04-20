@@ -30,21 +30,31 @@ body {
 .form {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 60% 60% auto 60% 40%;
+  grid-template-rows: 13em 13em 5em 13em 6em;
 }
 
-.form * {
-  margin: 20px;
+.form h2,
+input,
+h3 {
+  margin-left: 20px;
 }
 
 a {
   text-decoration: none;
   color: #111111;
   opacity: 80%;
+  margin: 0;
 }
 
 section {
-  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  font-size: 0.9em;
+}
+
+section label {
+  width: max-content;
 }
 
 a:focus {
@@ -63,3 +73,7 @@ input:last-of-type {
 input[type="radio"]:only-of-type {
   display: none;
 }
+
+.border {
+  border-bottom: 3px solid black;
+  
