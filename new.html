@@ -8,17 +8,24 @@
     <title>New Task</title>
   </head>
   <body>
-    <form action="">
+    <form class="form" action="">
       <h2>Add new</h2>
       <input type="text" placeholder="Enter Task" />
       <h3>When</h3>
-      <label>Today <input type="radio" name="date" value="today" /> </label>
-      <label
-        >Tomorrow <input type="radio" name="date" value="tomorrow"
-      /></label>
-      <label
-        >Select Date <input type="radio" name="date" value="selectDate"
-      /></label>
+      <section>
+        <label
+          ><a href="#">Today</a>
+          <input type="radio" name="date" value="today" />
+        </label>
+        <label
+          ><a href="#">Tomorrow</a>
+          <input type="radio" name="date" value="tomorrow"
+        /></label>
+        <label
+          ><a href="#">Select Date</a>
+          <input type="radio" name="date" value="selectDate"
+        /></label>
+      </section>
       <input type="submit" value="Add Task" />
     </form>
   </body>
