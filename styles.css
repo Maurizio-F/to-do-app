@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&family=Roboto:wght@100&display=swap");
 
 *,
 *::before,
@@ -12,6 +12,9 @@
   --primary-text-color: #111111;
   --secondary-text-color: #ffffff;
   --headline: #393939;
+
+  --primary-font-family: "Montserrat", sans-serif;
+  --secondary-font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -20,5 +23,5 @@ html {
 
 body {
   margin: 0;
-  background: ;
+  background: var(--primary-bg-color);
 }
