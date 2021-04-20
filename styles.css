@@ -24,4 +24,6 @@ html {
 body {
   margin: 0;
   background: var(--primary-bg-color);
+  color: var(--secondary-text-color);
+  font-family: var(--secondary-font-family);
 }
