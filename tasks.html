@@ -8,16 +8,72 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="header">
+    <section class="header">
       <button class="header__burgerbutton" type="button">
-        <img src="img/burger.svg" alt="" />
+        <img src="./img/burger.svg" alt="" />
       </button>
 
       <h2>Tasks</h2>
 
       <button class="header__bellbutton" type="button">
-        <img src="img/bell.svg" alt="" />
+        <img src="./img/bell.svg" alt="" />
       </button>
-    </div>
+    </section>
+    <section class="tasks">
+      <section class="radio-group__tasks">
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="today"
+          />
+          <span class="radio-group__title">Today</span>
+        </label>
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="tomorrow"
+          />
+          <span class="radio-group__title">Tomorrow</span>
+        </label>
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="selectDate"
+          />
+          <span class="radio-group__title">This Week</span>
+        </label>
+      </section>
+
+      <section class="checkbox">
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="radio-group__title">Book appointment with</span>
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="radio-group__title">Book appointment with</span>
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="radio-group__title">Book appointment with</span>
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="radio-group__title">Book appointment with</span>
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="radio-group__title"
+            >Book appointment with Book appointment withBook appointment with
+          </span>
+        </label>
+      </section>
+    </section>
   </body>
 </html>
