@@ -24,7 +24,7 @@ html {
 body {
   margin: 0;
   color: var(--primary-text-color);
-  font-family: var(--secondary-font-family);
+  font-family: var(--primary-font-family);
   height: 100vh;
 }
 
@@ -35,7 +35,8 @@ body {
   display: grid;
   height: 100%;
   padding-left: 1em;
-  grid-template-rows: 24em 4em 18em 14em;
+  grid-template-rows: 24em auto 18em 14em;
+  grid-row-gap: 1em;
 }
 
 .form__submit {
@@ -46,7 +47,7 @@ body {
   color: var(--secondary-text-color);
   font-size: 1.4em;
   border: none;
-  padding: 1em;
+  padding: 1.6em;
 }
 
 a {
@@ -62,7 +63,7 @@ h2 {
 }
 
 h3 {
-  color: var(--primary-text-color);
+  color: #111111;
   font-size: 1em;
   letter-spacing: 0.2em;
   align-self: center;
@@ -73,16 +74,15 @@ h3 {
 .radio-group {
   display: flex;
   justify-content: space-evenly;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .radio-group__input {
-  width: max-content;
   opacity: 0;
   position: absolute;
 }
 
-.radio-group__input:checked + span {
+.radio-group__input:checked + .radio-group__title {
   color: var(--primary-bg-color);
 }
 
@@ -92,11 +92,13 @@ input {
   border: none;
 }
 
-.border {
+.form__input::placeholder {
+  opacity: 60%;
+  font-size: 4em;
   border-bottom: 3px solid grey;
+  width: 100%;
 }
 
-input[type="text"]::placeholder {
-  opacity: 60%;
-  font-size: 3em;
+.radio-group__input:focus-visible + .radio-group__title {
+  outline: thin solid;
 }

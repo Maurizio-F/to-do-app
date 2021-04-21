@@ -10,7 +10,7 @@
   <body>
     <form class="form" action="">
       <h2>Add new</h2>
-      <input class="border" type="text" placeholder="Enter Task" />
+      <input class="form__input" type="text" placeholder="Enter Task" />
       <h3>WHEN</h3>
       <section class="radio-group">
         <label>
@@ -20,7 +20,7 @@
             name="date"
             value="today"
           />
-          <span>Today</span>
+          <span class="radio-group__title">Today</span>
         </label>
         <label>
           <input
@@ -29,7 +29,7 @@
             name="date"
             value="tomorrow"
           />
-          <span>Tomorrow</span>
+          <span class="radio-group__title">Tomorrow</span>
         </label>
         <label>
           <input
@@ -38,7 +38,7 @@
             name="date"
             value="selectDate"
           />
-          <span>Select Date</span>
+          <span class="radio-group__title">Select Date</span>
         </label>
       </section>
       <input class="form__submit" type="submit" value="Add Task" />
