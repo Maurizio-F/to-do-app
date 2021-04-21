@@ -11,22 +11,37 @@
     <form class="form" action="">
       <h2>Add new</h2>
       <input class="border" type="text" placeholder="Enter Task" />
-      <h3>When</h3>
-      <section>
-        <label
-          ><a href="#">Today</a>
-          <input type="radio" name="date" value="today" />
+      <h3>WHEN</h3>
+      <section class="radio-group">
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="today"
+          />
+          <span>Today</span>
         </label>
-        <label
-          ><a href="#">Tomorrow</a>
-          <input type="radio" name="date" value="tomorrow"
-        /></label>
-        <label
-          ><a href="#">Select Date</a>
-          <input type="radio" name="date" value="selectDate"
-        /></label>
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="tomorrow"
+          />
+          <span>Tomorrow</span>
+        </label>
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="selectDate"
+          />
+          <span>Select Date</span>
+        </label>
       </section>
-      <input type="submit" value="Add Task" />
+      <input class="form__submit" type="submit" value="Add Task" />
     </form>
   </body>
 </html>
