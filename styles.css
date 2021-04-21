@@ -102,3 +102,5 @@ input {
 .radio-group__input:focus-visible + .radio-group__title {
   outline: thin solid;
 }
+
+/* Task Dashboard */
