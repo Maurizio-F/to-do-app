@@ -35,7 +35,7 @@ body {
   display: grid;
   height: 100%;
   padding-left: 1em;
-  grid-template-rows: 24em auto 18em 14em;
+  grid-template-rows: 18em 4em 7em 9em;
   grid-row-gap: 1em;
 }
 
@@ -90,13 +90,14 @@ h3 {
 
 input {
   border: none;
+  border-bottom: 2px solid grey;
+
+  font-size: 2em;
 }
 
 .form__input::placeholder {
-  opacity: 60%;
-  font-size: 4em;
-  border-bottom: 3px solid grey;
   width: 100%;
+  opacity: 60%;
 }
 
 .radio-group__input:focus-visible + .radio-group__title {
@@ -134,7 +135,7 @@ input {
 .radio-group__tasks {
   display: flex;
   justify-content: space-around;
-  font-size: 1.5em;
+  font-size: 1.1em;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   padding: 1.4em;
@@ -152,9 +153,10 @@ input {
 .checkbox {
   display: flex;
   flex-direction: column;
-  padding-top: 3.8em;
+  padding-top: 3.2em;
   padding-left: 1em;
-  font-size: 1.4em;
+  padding-right: 0.3em;
+  font-size: 1.2em;
 }
 
 .checkbox label {
@@ -164,4 +166,31 @@ input {
 .checkbox__input {
   opacity: 0;
   position: absolute;
+}
+
+.checkbox__input:checked + .checkbox__title {
+  text-decoration: line-through;
+  color: var(--primary-bg-color);
+}
+
+.pagination {
+  display: flex;
+  justify-self: flex-end;
+  align-self: flex-end;
+  justify-content: center;
+  grid-column: 2 /3;
+  width: 7em;
+  height: 5em;
+  background: var(--primary-bg-color);
+  border-top-left-radius: 0.7em;
+}
+
+.pagination__icon {
+  align-self: center;
+  width: 2em;
+  height: 2em;
+}
+
+.pagination a {
+  opacity: 100%;
 }
