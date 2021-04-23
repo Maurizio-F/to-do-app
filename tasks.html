@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="header">
+      <button class="header__burgerbutton" type="button">
+        <img src="./img/burger.svg" alt="" />
+      </button>
+
+      <h2>Tasks</h2>
+
+      <button class="header__bellbutton" type="button">
+        <img src="./img/bell.svg" alt="" />
+      </button>
+    </section>
+    <section class="tasks">
+      <section class="radio-group__tasks">
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="today"
+          />
+          <span class="radio-group__title">THIS WEEK</span>
+        </label>
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="tomorrow"
+          />
+          <span class="radio-group__title">TOMORROW</span>
+        </label>
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="selectDate"
+          />
+          <span class="radio-group__title">TODAY</span>
+        </label>
+      </section>
+
+      <section class="checkbox">
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="checkbox__title">Book appointment with Jared</span>
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="checkbox__title">Upload today shot on Dribbble</span>
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="checkbox__title"
+            >Complete the Elephant Illustration</span
+          >
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="checkbox__title">Buy Cake for Clair's Bithday</span>
+        </label>
+        <label>
+          <input class="checkbox__input" type="checkbox" />
+          <span class="checkbox__title">Attend UX Conference with Jared </span>
+        </label>
+      </section>
+      <section class="pagination">
+        <a class="pagination__icon" href="new.html"
+          ><img src="./img/plus.svg" alt=""
+        /></a>
+      </section>
+    </section>
+
+    <!--<section class="main-menu">
+      <h2>TASK APP</h2>
+
+      <a href="#"> <img src="./assets/Line.svg" /></a>
+
+      <ul class="main-menu__overview">
+        <li>Dashboard</li>
+        <li>Calendar</li>
+        <li>Categorize Tasks</li>
+        <li>Setting</li>
+      </ul>
+      <ul class="main-menu__about">
+        <li>About</li>
+        <li>Privacy Policy</li>
+        <li>License</li>
+      </ul>
+    </section> -->
+  </body>
+</html>
