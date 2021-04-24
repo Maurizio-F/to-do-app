@@ -9,9 +9,10 @@
   </head>
   <body>
     <section class="header">
-      <button class="header__burgerbutton" type="button">
+      <input type="checkbox" class="header__burgerbutton__input" id="burger" />
+      <label for="burger" class="header__burgerbutton__title">
         <img src="./img/burger.svg" alt="" />
-      </button>
+      </label>
 
       <h2>Tasks</h2>
 
@@ -81,10 +82,12 @@
       </section>
     </section>
 
-    <!--<section class="main-menu">
+    <section class="main-menu">
       <h2>TASK APP</h2>
 
-      <a href="#"> <img src="./assets/Line.svg" /></a>
+      <label for="burger" class="main-menu__burger">
+        <img src="./img/Line.svg"
+      /></label>
 
       <ul class="main-menu__overview">
         <li>Dashboard</li>
@@ -97,6 +100,6 @@
         <li>Privacy Policy</li>
         <li>License</li>
       </ul>
-    </section> -->
+    </section>
   </body>
 </html>
