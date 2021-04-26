@@ -262,6 +262,7 @@ input {
 
 .header__burgerbutton__title {
   position: absolute;
-  padding-top: 2em;
+  padding-top: 1em;
+  top: 10px;
   cursor: pointer;
 }
