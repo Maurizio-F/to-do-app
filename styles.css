@@ -17,6 +17,12 @@
   --secondary-font-family: "Roboto", sans-serif;
 }
 
+main {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
 html {
   font-size: 16px;
 }
@@ -107,23 +113,17 @@ input {
 /* Task Dashboard */
 
 .header {
-  display: grid;
-  height: 36%;
+  display: flex;
+  justify-content: space-between;
+  height: 33%;
   padding-left: 1.4em;
-}
-
-.header__burgerbutton {
-  grid-column: 1 / 3;
-  background: none;
-  border: none;
-  justify-self: left;
-  align-self: flex-end;
 }
 
 .header__bellbutton {
   background: none;
   border: none;
   bottom: 2em;
+  padding-right: 3em;
 }
 
 .tasks {
@@ -193,4 +193,76 @@ input {
 
 .pagination a {
   opacity: 100%;
+}
+
+/* ======== */
+
+/* slide in menu */
+
+.main-menu {
+  position: absolute;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-auto-rows: minmax(min-content, max-content);
+  padding-left: 2em;
+  padding-top: 4em;
+  background: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 1s;
+}
+
+.header__burgerbutton__input:checked ~ .main-menu {
+  transform: translateX(0);
+}
+
+.main-menu h2 {
+  font-size: 1em;
+  align-self: center;
+  margin: 0;
+}
+.main-menu a {
+  grid-column: 2;
+  align-self: center;
+}
+
+.main-menu__burger {
+  grid-column: 2;
+  align-self: center;
+}
+
+.main-menu ul {
+  margin: 0;
+}
+
+.main-menu__overview {
+  grid-row: 2;
+  list-style: none;
+  font-size: 1.8em;
+  line-height: 2em;
+  padding: 2em 0 1.5em 0;
+}
+
+.main-menu__about {
+  grid-row: 3;
+  list-style: none;
+  font-size: 0.9em;
+  line-height: 3.5em;
+  padding-left: 0;
+  align-self: start;
+}
+
+.header__burgerbutton__input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.header__burgerbutton__title {
+  position: absolute;
+  padding-top: 1em;
+  top: 10px;
+  cursor: pointer;
 }
