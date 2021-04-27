@@ -7,5 +7,11 @@ formElement.onsubmit = function (event) {
 
   const checkDateInput = document.querySelector(".radio-group__input:checked");
 
-  console.log(taskNameInput.value, checkDateInput.value);
+  if (!taskNameInput.value) {
+    alert("Please enter task");
+  } else if (!checkDateInput) {
+    alert("Please choose date");
+  } else {
+    console.log(taskNameInput.value, checkDateInput.value);
+  }
 };
