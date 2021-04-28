@@ -9,9 +9,17 @@ formElement.onsubmit = function (event) {
 
   if (!taskNameInput.value) {
     alert("Please enter task");
-  } else if (!checkDateInput) {
-    alert("Please choose date");
-  } else {
-    console.log(taskNameInput.value, checkDateInput.value);
+    return;
   }
+
+  if (!checkDateInput) {
+    alert("Please choose date");
+    return;
+  }
+
+  const task = {
+    name: taskNameInput.value,
+    date: checkDateInput.value,
+  };
+  console.log(task);
 };
