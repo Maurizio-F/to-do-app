@@ -21,5 +21,7 @@ formElement.onsubmit = function (event) {
     name: taskNameInput.value,
     date: checkDateInput.value,
   };
-  console.log(task);
+
+  const taskJSON = JSON.stringify(task);
+  localStorage.setItem("task", taskJSON);
 };
