@@ -2,6 +2,8 @@ const taskNameInput = document.querySelector(".form__input");
 
 const formElement = document.querySelector(".form");
 
+// FORM CHECK & NEW TASK
+
 formElement.onsubmit = function (event) {
   event.preventDefault();
 
@@ -22,6 +24,24 @@ formElement.onsubmit = function (event) {
     date: checkDateInput.value,
   };
 
-  const taskJSON = JSON.stringify(task);
-  localStorage.setItem("task", taskJSON);
+  const taskList = parseJSONFromLocalStorage("taskList");
+  const newTaskList = appendToArray(task, taskList);
+  stringifyJSONToLocalStorage("taskList", newTaskList);
 };
+
+// FUNCTIONS
+
+function parseJSONFromLocalStorage(key) {
+  const json = localStorage.getItem(key);
+  const data = JSON.parse(json);
+  return data;
+}
+
+function appendToArray(item, array) {
+  return [...array, item];
+}
+
+function stringifyJSONToLocalStorage(key, value) {
+  const json = JSON.stringify(value);
+  localStorage.setItem(key, json);
+}
