@@ -128,7 +128,7 @@ input {
 
 .tasks {
   display: grid;
-  height: 64%;
+  height: 65%;
   grid-template-columns: 20% 80%;
 }
 
