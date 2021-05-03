@@ -1,13 +1,17 @@
-function createTaskElement(taskName) {
+function createTaskElement(task) {
   const label = document.createElement("label");
   const input = document.createElement("input");
   const span = document.createElement("span");
 
   input.type = "checkbox";
   input.className = "checkbox__input";
+  input.checked = task.completed;
+  input.onchange = function () {
+    completeTask(task.name, input.checked);
+  };
 
   span.className = "checkbox__title";
-  span.innerText = taskName;
+  span.innerText = task.name;
 
   label.append(input, span);
   return label;
@@ -24,28 +28,18 @@ function parseJSONFromLocalStorage(key, defaultValue) {
 
 const taskList = parseJSONFromLocalStorage("taskList", []);
 
-let taskElement = taskList.map(function (task) {
-  return createTaskElement(task.name);
+let taskElementList = taskList.map(function (task) {
+  return createTaskElement(task);
 });
 
 const taskGroupElement = document.querySelector(".checkbox");
 
-// taskGroupElement.append(...taskElement);
-
-let today = taskList.filter((item) => item.date == "today");
-let tomorrow = taskList.filter((item) => item.date == "tomorrow");
-let thisWeek = taskList.filter((item) => item.date == "thisWeek");
+const taskListToday = taskList.filter((item) => item.date === "today");
+const taskListTomorrow = taskList.filter((item) => item.date === "tomorrow");
+const taskListThisWeek = taskList.filter((item) => item.date === "thisWeek");
 
 const selectRadioGroupTask = document.querySelectorAll(".radio-group__tasks");
 
-// if (selectRadioGroupTask.value == "today") {
-//   // return today;
-// }
-
-// console.log(selectRadioGroupTask);
-
-// const test = document.querySelector(".radio-group__input:checked");
-// // test.checked = true;
 const radioGroupTask = document.querySelectorAll(".radio-group__input");
 
 radioGroupTask.forEach((radioButton) => {
@@ -53,45 +47,37 @@ radioGroupTask.forEach((radioButton) => {
 });
 
 function createTaskList(value) {
-  // taskGroupElement.value = value;
+  taskGroupElement.innerHTML = "";
+  if (value === "today") {
+    taskElementList = taskListToday.map(createTaskElement);
 
-  // if (radioGroupTask == null) {
-  //   taskGroupElement.append(...taskElement);
-  // } else {
-  if (value == "today") {
-    taskElement = today.map(function (task) {
-      return createTaskElement(task.name);
-    });
-
-    taskGroupElement.append(...taskElement);
+    taskGroupElement.append(...taskElementList);
   }
 
-  if (value == "tomorrow") {
-    taskElement = tomorrow.map(function (task) {
-      return createTaskElement(task.name);
-    });
+  if (value === "tomorrow") {
+    taskElementList = taskListTomorrow.map(createTaskElement);
 
-    taskGroupElement.append(...taskElement);
+    taskGroupElement.append(...taskElementList);
   }
 
-  if (value == "thisWeek") {
-    taskElement = thisWeek.map(function (task) {
-      return createTaskElement(task.name);
-    });
+  if (value === "thisWeek") {
+    taskElementList = taskListThisWeek.map(createTaskElement);
 
-    taskGroupElement.append(...taskElement);
+    taskGroupElement.append(...taskElementList);
     console.log(radioGroupTask.value);
   }
 }
+
+// function completeTask(task, completed) {
+//   const taskList = parseJSONFromLocalStorage("taskList", []);
+//   const task = taskList.find(function (task) {
+//     return task.name === task;
+//   });
+//   task.completed = completed;
+//   stringifyJSONToLocalStorage("taskList", taskList);
 // }
 
-// console.log(taskElement);
-
-// console.log(taskGroupElement, taskElement);
-
-// console.log("today: ", today);
-// console.log("tomorrrow: ", tomorrow);
-// console.log("selectDate: ", selectDate);
-
-// const radioButtons = document.querySelectorAll("radio-group__input");
-// console.log(radioButtons)
+function stringifyJSONToLocalStorage(key, value) {
+  const json = JSON.stringify(value);
+  localStorage.setItem(key, json);
+}
